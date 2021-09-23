@@ -1,0 +1,6 @@
+#!/usr/bin/python3
+
+#^ The line above is referred to as a shebang line (this term comes from SHarp bang or haSH bang which are written together as: #!)
+# So the purpose of line1 is to distinguish an absolute path for your program to run (it specifies how to run your program)
+# This is helpful in many cases especially if you have multiple versions of python or someone else will be utilizing your code
+# You can also write it as: #!/usr/bin/ruby etc...
