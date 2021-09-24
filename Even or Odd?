@@ -1,56 +1,52 @@
 #!/usr/bin/python3
-from math import e
 import random
-from typing import IO
 
 autoResponse = ['I think you missunderstood what I meant. Please try again.', 'Guess what everyone, looks like we have a jokester on our hands... No but seriously, please answer the question correctly', 'I am pleased to inform you that it is time you get some sleep, and then come back to answer this question when you are more awake.', 'If this were a "Am I Okay To Drive" quiz, then you would fail.']
 
+done = False
 name = input('Enter your name:  ')
+
 print(f'Hello {name}.')
 
-done = False
-
-while not done: 
-    x = input('Please enter any integer: ')
-
+while not done:
     try:
-        if int(x) % 2 == 0:
-            print(f"Congratulations {name}, your integer is Even.")
-        else:
-            print (f"Congratulations {name}, your integer is Odd.")
+        x = input('Please enter any integer: ')
 
+        if int(x) % 2 == 0:
+            print(f'Congratulations {name}, your integer is Even.')
+        else:
+            print (f'Congratulations {name}, your integer is Odd.')
         done = True
 
-    except:
-        print(f'{name}')
+    except ValueError:
         print(random.choice(autoResponse))
+        continue
 
-myEvens = ()
-myOdds = ()
+done = False
+myEvens = []
+myOdds = []
 
 while not done:
-    i = input('Please enter 10 integers, and separate them with spaces: ')
 
+    i = input('Please enter 10 integers, and separate them with spaces: ')
     try:
         myInps = i.split()
         if len(myInps) != 10:
             raise IOError('There are not enough integers inputed, please make sure to enter ten integers separated with spaces.')
-
         for elm in myInps: 
             num = int(elm)
             if num % 2 == 0:
                 myEvens.append(num)
-                
             else:
                 myOdds.append(num)
 
-        print(f'You entered {len(myEvens)} even numbers.')
-        print(f'You entered {len(myOdds)} odd numbers.')
-
         done = True
-    except IOError(e):
+    except IOError as e:
         print(e)
-
-    except: 
-        print(f'{name}')
-        print(random.choice(autoResponse))
+    except ValueError as e:
+        print('One of your integers seems to be alien to us, please make sure all of your inputs are integers.')
+if len(myOdds) == 0:
+    print ('No odd numbers were entered.')
+else:
+    myOdds.sort()
+    print(f'The largest odd integer is: {myOdds[-1]}')
