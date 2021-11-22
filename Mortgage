@@ -1,1 +1,25 @@
+#Calculates mortgage from inputed data
+import math
 
+done = False
+while not done:
+    try:
+        loan = int(input('Enter loan amount: '))
+        
+        period = int(input('Enter loan period (months): '))
+
+        interest = int(input('Enter annual interest rate (percentage): '))
+
+        monthly = (interest/100)
+        monthly = (monthly/12)
+
+        Cost = (loan*monthly*(1+monthly)**period) / ((1+monthly)**period - 1)
+
+        finalCost = Cost
+        
+        print('You owe $%.2f per month.' % finalCost) 
+    
+        done = True
+
+    except ValueError:
+        print('Please make sure your inputs are integers.')
