@@ -1,1 +1,19 @@
+#Calculates loan based on inputed data
+import math
 
+done = False
+while not done:
+    try:
+        ln = input('Enter loan amount: ')
+        loan = int(ln)
+        
+        per = input('Enter loan period (months): ')
+        period = int(per)
+
+        monthCost = loan/period
+        print('You owe $%.2f per month.' % monthCost) 
+    
+        done = True
+
+    except ValueError:
+        print("Please make sure your inputs are integers.")
