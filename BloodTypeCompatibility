@@ -1,0 +1,30 @@
+#Determines if the two inputed blood types are compatible.
+def validInput(bloodType):
+    if bloodType in ['A', 'B', 'AB', 'O']:
+        return True
+    return False
+
+def canDonateBlood(donor, recipient):
+    if donor == 'O':
+        return True
+    
+    if donor == 'AB' and recipient == 'AB':
+        return True
+    
+    if donor == 'A' and recipient in ['A', 'AB']:
+        return True
+    
+    if donor == 'B' and recipient in ['B', 'AB']:
+        return True
+
+    return False
+
+donorType = input('Enter donor blood type (uppercase only): ')
+recipientType = input('Enter recipient type (uppercase only): ')
+
+while not validInput(donorType) or not validInput(recipientType):
+    donorType = input('Enter donor blood type (uppercase only): ')
+    recipientType = input('Enter recipient type (uppercase only: ')
+
+result = canDonateBlood(donorType, recipientType)
+print(result)
