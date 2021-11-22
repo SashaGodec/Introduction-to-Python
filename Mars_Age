@@ -1,1 +1,14 @@
+#Converts user's age to Mars age
+done = False
+while not done:
+    try:
+        age = input('Enter your age: ')
+        age = int(age)
+        seconds = age*31557600
+        marsAge = seconds/59356800
+        print('On Mars, you would be about %.2f' % marsAge)
 
+        done = True
+
+    except ValueError:
+        print('Please make sure your number is an integer.')
