@@ -1,0 +1,24 @@
+#Interleaving Words
+def interleave(word1, word2):
+    shortlen = min(len(word1), len(word2))
+    nV = []
+    for i in range(0, shortlen):
+        nV.append(word1[i])
+        nV.append(word2[i])
+
+    i += 1
+
+    if i == len(word1) and i == len(word2):
+        return ''.join(nV)
+
+    if i == len(word1):
+        nV.append(word2[i:])
+        return ''.join(nV)
+
+    if i == len(word2):
+        nV.append(word1[i:])
+        return ''.join(nV)
+
+word1 = input('Enter a word: ')
+word2 = input('Enter a word: ')
+print(interleave(word1, word2))
