@@ -1,0 +1,11 @@
+#Counting Vowels
+def countVowels(s):
+    count = 0
+    for l in s:
+        if l in 'AEIOUaeiou':
+            count += 1     
+    return count
+
+s = input('Enter any string: ')
+r = countVowels(s)
+print(r)
