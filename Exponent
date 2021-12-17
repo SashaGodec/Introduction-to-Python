@@ -1,0 +1,12 @@
+def is_power(number, base):
+    for n in range(-1, number):
+        n+=1
+        if base**n == number:
+            return True        
+    return False
+
+base = int(input('Enter a base integer: '))
+number = int(input('Enter the solution: '))
+
+result = is_power(number, base)
+print(result)
