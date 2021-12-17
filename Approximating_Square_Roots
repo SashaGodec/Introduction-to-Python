@@ -1,0 +1,10 @@
+#Approximating Square Roots
+def sqrt(a, x, epsilon):
+    while abs(x - a/x) > epsilon:
+        x = (x + a/x) / 2
+    return x
+    
+
+a, x, epsilon = input('Enter a, x, and epsilon respectively (space separated): ').split()
+result = sqrt(int(a), int(x), float(epsilon))
+print(result)
