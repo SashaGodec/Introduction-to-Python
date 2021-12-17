@@ -1,0 +1,15 @@
+#String Stability
+def isStable(s):
+    mid = int(len(s) / 2)
+    pt1 = s[0:mid]
+    if mid * 2 == len(s):
+        #even strings
+        pt2 = s[mid:]
+    else:
+        #odd strings
+        pt2 = s[mid+1:]
+    
+    return countVowels(pt1) == countVowels(pt2)
+    
+s = input('Enter any string: ')
+print(isStable(s))
