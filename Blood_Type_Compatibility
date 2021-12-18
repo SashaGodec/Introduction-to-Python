@@ -25,6 +25,5 @@ recipientType = input('Enter recipient type (uppercase only): ')
 while not validInput(donorType) or not validInput(recipientType):
     donorType = input('Enter donor blood type (uppercase only): ')
     recipientType = input('Enter recipient type (uppercase only: ')
-
-result = canDonateBlood(donorType, recipientType)
-print(result)
+ 
+print(canDonateBlood(donorType, recipientType))
