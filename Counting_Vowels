@@ -7,5 +7,4 @@ def countVowels(s):
     return count
 
 s = input('Enter any string: ')
-r = countVowels(s)
-print(r)
+print(countVowels(s))
