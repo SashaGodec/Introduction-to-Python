@@ -1,0 +1,22 @@
+#Is Number Perfect
+def is_perfect(n):
+    solution = 0
+    for x in range(1,n):
+        if n % x == 0:
+            solution += x
+    return solution == n
+
+n = int(input('Enter any integer: '))
+result = is_perfect(n)
+print(result)
+
+#Next Perfect Number
+def next_perfect(n):
+    while True:
+        if is_perfect(n):
+            return n
+        n += 1
+        
+n = int(input('Enter any integer: '))
+result = next_perfect(n)
+print(result)
